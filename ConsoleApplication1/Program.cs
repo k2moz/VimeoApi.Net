@@ -9,22 +9,32 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Vimeo;
 
 namespace ConsoleApplication1
 {
     class Program
     {
-        public const string accessToken = "";
-        public const string cid = "";
-        public const string secret = "";
+        public const string accessToken = "accessToken";
+        public const string cid = "cid";
+        public const string secret = "secret";
 
         static void Main(string[] args)
         {
             Program p = new Program();
             //p.POSTUploadFileFromPath( "C://SASFiles/video.mp4" );
+            //var a = Auth.GetClientCredentials(accessToken, secret);
+            //var aa = Auth.GetAuthURL(cid, null, "", "https://api.vimeo.com" );
+
+            //var b = VimeoClient.Authorize(accessToken, cid, secret, "");
+            //var a = Auth.GetAccessToken(accessToken, cid, secret, "", "https://api.vimeo.com");
+
 
             var video = p.PullUploadFileFromPath("C://SAS/video.mp4");
-            p.SetPrivateStatus(video.VideoId.ToString(), "brainoteka.com");
+            //p.SetPrivateStatus(video.VideoId.ToString(), "brainoteka.com");
+
+            //p.SetPrivateStatus("329154891", "brainoteka.com");
+
             Console.ReadKey();
         }
 
@@ -183,27 +193,70 @@ namespace ConsoleApplication1
             //privacy.embed
             //whitelist
             //PUThttps://api.vimeo.com/videos/{video_id}/privacy/domains/{domain}
+            //https://api.vimeo.com/videos/{video_id}
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://vimeo.com/api/videos/" + videoId + "/privacy/domains/" + domain);
-            request.Method = "GET";
-            if (!string.IsNullOrEmpty(authToken))
+
+            if (string.IsNullOrEmpty(authToken))
             {
                 var vc = Vimeo.VimeoClient.ReAuthorize(
                         accessToken: accessToken,
                         cid: cid,
                         secret: secret
                          );
-                request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + vc.AccessToken);
+                authToken = vc.AccessToken;
             }
-            else
+
+
+            //HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://vimeo.com/api/videos/" + videoId);
+            //req.Method = "PATCH";
+
+            var payload = new Dictionary<string, string>
             {
-                request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + authToken);
-            }
+                {"privacy.add", "true"},
+                {"privacy.embed", "whitelist"},
+                {"spatial.director_timeline.pitch","0" },
+                {"spatial.director_timeline.time_code","0" },
+                {"spatial.director_timeline.yaw","0" },
+
+            };
+
+            string encoded = Helpers.ToBase64(String.Format("{0}:{1}", cid, secret));
+           
+            var headers = new WebHeaderCollection()// Dictionary<string, string>
+            {
+                //{"Accept", "application/vnd.vimeo.*+json; version=3.2"},
+                {"Authorization", String.Format("Basic {0}", encoded)}
+            };
+
+            var a = Helpers.HTTPFetch(
+                String.Format($"https://vimeo.com/api/videos/{videoId}", "https://vimeo.com"),
+                "PATCH", headers, payload);
+
+            //using (Stream dataStream = request.GetRequestStream())
+            //{
+            //    byte[] buffer = new byte[fileStream.Length];
+            //    var data = fileStream.Read(buffer, 0, buffer.Length);
+            //    dataStream.Write(buffer, 0, data);
+            //}
+
+            //using (HttpWebResponse response = (HttpWebResponse)req.GetResponse())
+            //{
+            //    var strreader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+            //    var responseToString = strreader.ReadToEnd();
+            //    var aa = JsonConvert.DeserializeObject<JObject>(responseToString);
+            //    //return a["thumbnail_url"].ToString();
+            //}
+
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://vimeo.com/api/videos/" + videoId + "/privacy/domains/" + domain);
+            request.Method = "PUT";
+            request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + authToken);
+
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
                 var strreader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
                 var responseToString = strreader.ReadToEnd();
-                var a = JsonConvert.DeserializeObject<JObject>(responseToString);
+                var aaa = JsonConvert.DeserializeObject<JObject>(responseToString);
                 //return a["thumbnail_url"].ToString();
             }
 

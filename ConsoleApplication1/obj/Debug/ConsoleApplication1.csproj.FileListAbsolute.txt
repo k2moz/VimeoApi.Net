@@ -13,3 +13,14 @@ D:\Шара\Projects\Git\Vimeo\ConsoleApplication1\obj\Debug\ConsoleApplication1
 D:\Шара\Projects\Git\Vimeo\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
 C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojAssemblyReference.cache
 C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CoreCompileInputs.cache
+C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\bin\Debug\Newtonsoft.Json.dll
+C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\bin\Debug\RestSharp.dll
+C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\bin\Debug\Newtonsoft.Json.pdb
+C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\bin\Debug\Newtonsoft.Json.xml
+C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\bin\Debug\RestSharp.xml
+C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CopyComplete
+C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
