@@ -124,6 +124,13 @@ namespace Vimeo
             request.ContentType = contentType;
             request.KeepAlive = false;
 
+
+            //ServicePointManager.Expect100Continue = true;
+            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+
+
             if (!String.IsNullOrWhiteSpace(payload))
             {
                 var streamBytes = Helpers.ToByteArray(payload);
