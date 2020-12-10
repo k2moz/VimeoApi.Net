@@ -24,3 +24,16 @@ C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\bin\Debug\RestSharp.xml
 C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CopyComplete
 C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\SAS\Projects\Vimeo\Code\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\bin\Debug\Newtonsoft.Json.dll
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\bin\Debug\RestSharp.dll
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\bin\Debug\Newtonsoft.Json.pdb
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\bin\Debug\Newtonsoft.Json.xml
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\bin\Debug\RestSharp.xml
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojAssemblyReference.cache
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CoreCompileInputs.cache
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CopyComplete
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\bin\Debug\ConsoleApplication1.dll.config
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\bin\Debug\ConsoleApplication1.dll
+D:\Шара\VS\BitBucket\Vimeo\App\ConsoleApplication1\obj\Debug\ConsoleApplication1.dll
